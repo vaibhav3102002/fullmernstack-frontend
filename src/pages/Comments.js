@@ -14,7 +14,7 @@ const Comments = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await fetch('http://localhost:8000/comment', {
+            const response = await fetch('https://my-mern-web.herokuapp.com/comment', {
                 method: 'POST',
                 headers: {
                     Accept:"application/json",

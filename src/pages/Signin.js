@@ -19,7 +19,7 @@ const Signin = () => {
 
             
 
-            const response = await fetch("http://localhost:8000/register", {
+            const response = await fetch("https://my-mern-web.herokuapp.com/register", {
                 method: 'POST',
                 headers: {
                     "Content-type": "application/json",

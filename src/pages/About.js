@@ -6,7 +6,7 @@ const About = () => {
     const [userInfo, setUserInfo] = useState({})
     const fetchData=async()=>{
         try {
-            const response=await fetch('http://localhost:8000/about',{
+            const response=await fetch('https://my-mern-web.herokuapp.com/about',{
                 method:'GET',
                 headers:{
                     ACCEPT:"application/json",

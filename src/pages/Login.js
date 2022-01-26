@@ -19,7 +19,7 @@ const Login = () => {
     const handleLogSubmit=async(e)=>{
         e.preventDefault()
         try {
-            const response=await fetch('http://localhost:8000/login',{
+            const response=await fetch('https://my-mern-web.herokuapp.com/login',{
                 method:'POST',
                 withCredentials: true,
                 credentials: 'include',

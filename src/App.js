@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import Navbar from './componets/Navbar'
+import About from './pages/About'
+import Comments from './pages/Comments'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Signin from './pages/Signin'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Error from './pages/Error'
+import Logout from './pages/Logout'
+import { useGlobalContext } from './context'
 
-function App() {
+
+
+
+
+
+const App = () => {
+  const data=useGlobalContext()
+  console.log(data);
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/'element={<Home/>}/>
+          
+          <Route path='/about'element={<About/>}/>
+          
+          <Route path='/comments'element={<Comments/>}/>
+          
+          <Route path='/login'element={<Login/>}/>
+          
+          <Route path='/Signin'element={<Signin/>}/>
+
+          <Route path='/logout'element={<Logout/>}/>
+          
+          <Route path='*'element={<Error/>}/>
+
+        </Routes>
+
+      </Router>
+
+
+
+     
+    </>
+  )
 }
 
-export default App;
+export default App
